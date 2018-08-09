@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float rotSpeed = 180f;
+    public float rotSpeed = 720f;
     public float maxSpeed = 3.5f;
 
     float shipBoundaryRadius = 0.5f;
@@ -14,20 +14,22 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void Update () {
+        //rotation removed - ship independently strafes and shoots at mouse
+        
+        Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        dir.Normalize();
+        //Rotate towards mouse location
+        float zAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        Quaternion desiredRot = Quaternion.Euler(0, 0, zAngle);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRot, rotSpeed * Time.deltaTime); //aim at mouse
 
-        //ROTATE THE SHIP
-        Quaternion rot = transform.rotation;
-        float z = rot.eulerAngles.z;
-        //Take horizontal input, times rotation speed and delta time and add them to the euler transform of the transform's rotation Z-axis.
-        z -= Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-        rot = Quaternion.Euler(0, 0, z);
-        transform.rotation = rot;
+
 
         //MOVE THE SHIP
         //Returns a float from -1 to 1
         Vector3 pos = transform.position;
-        Vector3 velocity = new Vector3(0, maxSpeed * Time.deltaTime * Input.GetAxis("Vertical"), 0);
-        pos += rot * velocity;
+        Vector3 velocity = new Vector3(maxSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), maxSpeed * Time.deltaTime * Input.GetAxis("Vertical"), 0);
+        pos +=  velocity;
         transform.position = pos;
 
         // RESTRICT SHIP TO CAMERA
