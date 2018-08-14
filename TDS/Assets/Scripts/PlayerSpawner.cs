@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSpawner : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class PlayerSpawner : MonoBehaviour {
     public GameObject playerPrefab;
     GameObject playerInstance;
     public int numLives = 4;
-
+    public Text livesText;
     // Use this for initialization
     void Start () {
         SpawnPlayer();
@@ -17,6 +18,8 @@ public class PlayerSpawner : MonoBehaviour {
 	
     void SpawnPlayer() {
         numLives--;
+        //for lives GUI
+        GameObject.Find("LivesPanel").GetComponent<Text>().text = "Lives: " + numLives;
         respawnTimer = 1;
         playerInstance = (GameObject)Instantiate(playerPrefab, transform.position, Quaternion.identity);
     }

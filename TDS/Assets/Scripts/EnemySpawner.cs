@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -33,6 +34,7 @@ public class EnemySpawner : MonoBehaviour {
 
             Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
             numEnemies++;
+            GameObject.Find("ScorePanel").GetComponent<Text>().text = "Score : " + numEnemies;
         }
 	}
 
