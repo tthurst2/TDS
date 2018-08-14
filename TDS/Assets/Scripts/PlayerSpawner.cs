@@ -33,6 +33,10 @@ public class PlayerSpawner : MonoBehaviour {
                 SpawnPlayer();
             }
         }
+        if(numLives <= 0) {
+            Time.timeScale = 0.0f;
+            GameObject.Find("GameOverPanel").GetComponent<Text>().text = "Game Over!";
+        }
 	}
 
 }
