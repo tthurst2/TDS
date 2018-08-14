@@ -38,10 +38,4 @@ public class EnemySpawner : MonoBehaviour {
         }
 	}
 
-    //DATED AND LEGACY
-    private void OnGUI() {
-
-            GUI.Label(new Rect(Screen.width - 75, 0, 100, 50), "Score: " + numEnemies);
-    }
-
 }
