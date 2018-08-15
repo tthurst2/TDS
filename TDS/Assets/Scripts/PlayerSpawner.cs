@@ -37,7 +37,9 @@ public class PlayerSpawner : MonoBehaviour {
         if (numLives <= 0) {
             Time.timeScale = 0.0f;
             GameObject.Find("GameOverPanel").GetComponent<Text>().text = "Game Over!";
-            GameObject.Find("RestartButton").GetComponent<Button>().GetComponent<RestartButton>().ShowRestartButton();
+            CanvasGroup cg = GameObject.Find("RestartButton").GetComponent<CanvasGroup>();
+            cg.interactable = true;
+            cg.alpha = 1;
             
         }
 	}
