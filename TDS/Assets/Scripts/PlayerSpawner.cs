@@ -17,6 +17,7 @@ public class PlayerSpawner : MonoBehaviour {
 	}
 	
     void SpawnPlayer() {
+        Time.timeScale = 1.0f;
         numLives--;
         //for lives GUI
         GameObject.Find("LivesPanel").GetComponent<Text>().text = "Lives: " + numLives;
@@ -33,9 +34,11 @@ public class PlayerSpawner : MonoBehaviour {
                 SpawnPlayer();
             }
         }
-        if(numLives <= 0) {
+        if (numLives <= 0) {
             Time.timeScale = 0.0f;
             GameObject.Find("GameOverPanel").GetComponent<Text>().text = "Game Over!";
+            GameObject.Find("RestartButton").GetComponent<Button>().GetComponent<RestartButton>().ShowRestartButton();
+            
         }
 	}
 
