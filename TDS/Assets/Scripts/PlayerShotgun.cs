@@ -27,7 +27,13 @@ public class PlayerShotgun : MonoBehaviour {
             //two side bullets (shotgun effect)
             GameObject bulletGO2 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, tiltAngle));
             GameObject bulletGO3 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, -tiltAngle));
+            GameObject bulletGO4 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, tiltAngle * 2));
+            GameObject bulletGO5 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, -tiltAngle * 2));
             bulletGO.layer = bulletLayer;
+            bulletGO2.layer = bulletLayer;
+            bulletGO3.layer = bulletLayer;
+            bulletGO4.layer = bulletLayer;
+            bulletGO5.layer = bulletLayer;
         }
     }
 }
