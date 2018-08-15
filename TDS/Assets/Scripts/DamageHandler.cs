@@ -8,6 +8,7 @@ public class DamageHandler : MonoBehaviour {
     public float invulnPeriod = 0;
     float invulnTimer = 0;
     int correctLayer;
+    float collisionTimer = 0;
     float invulnAnimTimer = 0;
     float invulnFlashDelay = 0.2f; //5 flashes per second
     SpriteRenderer spriteRend;
@@ -23,7 +24,12 @@ public class DamageHandler : MonoBehaviour {
 
 
     void OnTriggerEnter2D() {
-        health--;
+        if(collisionTimer < 0) {
+            collisionTimer = 0.5f;
+            health--;
+        }
+        
+
         //Debug.Log("Trigger!");
         //Optimize this!
         if(invulnPeriod > 0) {
@@ -33,7 +39,7 @@ public class DamageHandler : MonoBehaviour {
     }
 
     void Update() {
-
+        collisionTimer -= Time.deltaTime;
         if(invulnTimer > 0) {
             invulnTimer -= Time.deltaTime;
 

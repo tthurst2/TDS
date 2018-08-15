@@ -10,14 +10,14 @@ public class PlayerSpawner : MonoBehaviour {
     public GameObject playerPrefab;
     GameObject playerInstance;
     public int numLives = 4;
-    public Text livesText;
     // Use this for initialization
     void Start () {
+        Time.timeScale = 1.0f;
         SpawnPlayer();
 	}
 	
     void SpawnPlayer() {
-        Time.timeScale = 1.0f;
+        
         numLives--;
         //for lives GUI
         GameObject.Find("LivesPanel").GetComponent<Text>().text = "Lives: " + numLives;
