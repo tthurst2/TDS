@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShotgun : MonoBehaviour {
+public class PlayerShotgun : MonoBehaviour, IGunInterface {
 
     public GameObject bulletPrefab;
     public Vector3 bulletOffset = new Vector3(0, 0.5f, 0);
@@ -15,6 +15,10 @@ public class PlayerShotgun : MonoBehaviour {
     }
 
     void Update() {
+        Fire();
+    }
+    #region IsGunInterface implementation 
+    public void Fire() {
         cooldownTimer -= Time.deltaTime;
 
 
@@ -36,4 +40,7 @@ public class PlayerShotgun : MonoBehaviour {
             bulletGO5.layer = bulletLayer;
         }
     }
+    #endregion
+
+
 }
