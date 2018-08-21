@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee30e675f929b0c4387cd39f7aef7eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
+  timer: 0.5
 --- !u!114 &114915369929402888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c3265d63485794aa0e18d80d77285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
   invulnPeriod: 0
 --- !u!212 &212551202542972356
 SpriteRenderer:

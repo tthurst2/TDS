@@ -6,7 +6,7 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
 
     public GameObject bulletPrefab;
     public Vector3 bulletOffset = new Vector3(0, 0.5f, 0);
-    public float fireDelay = 0.25f;
+    public float fireDelay = 0.50f;
     float cooldownTimer = 0;
     int bulletLayer;
     float tiltAngle = 15.0f;

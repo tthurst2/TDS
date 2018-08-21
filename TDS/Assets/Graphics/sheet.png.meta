@@ -7,6 +7,7 @@ TextureImporter:
     21300004: Blue Beam
     21300006: Red Beam
     21300008: EnemyShip - Purple Elite
+    21300010: Green Uzi
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -184,6 +185,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 899ac52116501c84eb56019e28cdb70d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Uzi
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 370
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc69023df81332c478989c9829ea2eb8
       vertices: []
       indices: 
       edges: []
