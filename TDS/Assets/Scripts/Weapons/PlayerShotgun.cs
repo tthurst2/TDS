@@ -12,6 +12,7 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
     float tiltAngle = 15.0f;
     private void Start() {
         bulletLayer = 11; //player bullet layer
+        
     }
 
     void Update() {
