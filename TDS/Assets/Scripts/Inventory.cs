@@ -20,7 +20,6 @@ public class Inventory : MonoBehaviour {
     #endregion
     //Weapon list
     public List<GameObject> weapons = new List<GameObject>();
-
     public void Add (GameObject weapon) {
         weapons.Add(weapon);
     }
