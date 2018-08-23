@@ -1,16 +1,18 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public List<GameObject> weapons = new List<GameObject>();
+
+    public void Add (GameObject weapon) {
+        weapons.Add(weapon);
+    }
+
+    public void Remove(GameObject weapon) {
+        weapons.Remove(weapon);
+    }
+
 }
