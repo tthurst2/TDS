@@ -29,7 +29,7 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
 
             Vector3 offset = transform.rotation * bulletOffset;
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
-            //two side bullets (shotgun effect)
+            ///two side bullets (shotgun effect)
             GameObject bulletGO2 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, tiltAngle));
             GameObject bulletGO3 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, -tiltAngle));
             GameObject bulletGO4 = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation * Quaternion.Euler(0, 0, tiltAngle * 2));

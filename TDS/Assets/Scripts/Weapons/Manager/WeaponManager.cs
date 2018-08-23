@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour {
     int prevWeapon = -1;
     int currentWeapon = -1;
+    float weaponSwapTimer = 0.5f;
 	// Use this for initialization
 	void Start () {
         PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
@@ -18,7 +19,10 @@ public class WeaponManager : MonoBehaviour {
         /*
          * THIS IS REALLY BAD, DO NOT ACTUALLY USE THIS. PURELY FOR UNDERSTANDING HOW UNITY WORKS
          */
-        if (Input.GetKey(KeyCode.Alpha1) && currentWeapon != 0) {
+        weaponSwapTimer -= Time.deltaTime;
+        
+        if (Input.GetKey(KeyCode.Alpha1) && currentWeapon != 0 && weaponSwapTimer <= 0) {
+            weaponSwapTimer = 0.5f;
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 0;
@@ -26,7 +30,8 @@ public class WeaponManager : MonoBehaviour {
             bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1) {
+        if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 && weaponSwapTimer <= 0) {
+            weaponSwapTimer = 0.5f; ;
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 1;
@@ -34,7 +39,8 @@ public class WeaponManager : MonoBehaviour {
             ps.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Red Shotgun");
         }
 
-        if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2) {
+        if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 && weaponSwapTimer <= 0) {
+            weaponSwapTimer = 0.5f; ;
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 2;
@@ -52,6 +58,7 @@ public class WeaponManager : MonoBehaviour {
                 break;
             case 1:
                 PlayerShotgun ps = GetComponent<PlayerShotgun>();
+                Debug.Log(ps);
                 Destroy(ps);
                 break;
             case 2:

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c3265d63485794aa0e18d80d77285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 1
   invulnPeriod: 0
 --- !u!212 &212551202542972356
 SpriteRenderer:
