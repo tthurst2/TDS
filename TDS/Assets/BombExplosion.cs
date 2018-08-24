@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombExplosion : MonoBehaviour {
 
     //number of bullets we want in explosive nova
-    public float novaBullets = 20f;
+    public float novaBullets = 45f;
 
 	// Use this for initialization
 	void Start () {
