@@ -11,18 +11,16 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
     int bulletLayer;
     float tiltAngle = 15.0f;
     private void Start() {
-        bulletLayer = 11; //player bullet layer
-        
+        bulletLayer = 11; //player bullet layer 
     }
 
     void Update() {
+        cooldownTimer -= Time.deltaTime;
         Fire();
     }
     #region IsGunInterface implementation 
     public void Fire() {
-        cooldownTimer -= Time.deltaTime;
-
-
+        
         if (Input.GetButton("Fire1") && cooldownTimer <= 0) {
             //Fire weapon
             cooldownTimer = fireDelay;
@@ -40,6 +38,9 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
             bulletGO4.layer = bulletLayer;
             bulletGO5.layer = bulletLayer;
         }
+    }
+    public void LoadBullets(int index) {
+        bulletPrefab = Inventory.instance.bullets[index];
     }
     #endregion
 

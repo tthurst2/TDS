@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface IGunInterface {
     void Fire();
+    void LoadBullets(int index);
 }

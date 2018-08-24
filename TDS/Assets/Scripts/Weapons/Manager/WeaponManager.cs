@@ -8,8 +8,9 @@ public class WeaponManager : MonoBehaviour {
     float weaponSwapTimer = 0.5f;
 	// Use this for initialization
 	void Start () {
-        PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
-        bb.bulletPrefab = Inventory.instance.bullets[0];
+        IGunInterface gun = gameObject.AddComponent<PlayerBasicBeam>();
+        gun.LoadBullets(1);
+        //bb.GetComponent<PlayerBasicBeam>().bulletPrefab = Inventory.instance.weapons[0];
         currentWeapon = 0;
         prevWeapon = 0;
     }
@@ -26,9 +27,11 @@ public class WeaponManager : MonoBehaviour {
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 0;
-            PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
+            //PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
+            IGunInterface gun = gameObject.AddComponent<PlayerBasicBeam>();
+            gun.LoadBullets(0);
             //bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");
-            bb.bulletPrefab = Inventory.instance.bullets[0];
+            //bb.bulletPrefab = Inventory.instance.bullets[0];
         }
 
         if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 && weaponSwapTimer <= 0) {
@@ -36,8 +39,10 @@ public class WeaponManager : MonoBehaviour {
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 1;
-            PlayerShotgun ps = gameObject.AddComponent<PlayerShotgun>();
-            ps.bulletPrefab = Inventory.instance.bullets[1];
+            IGunInterface gun = gameObject.AddComponent<PlayerShotgun>();
+            gun.LoadBullets(1);
+            //PlayerShotgun ps = gameObject.AddComponent<PlayerShotgun>();
+            //ps.bulletPrefab = Inventory.instance.bullets[1];
         }
 
         if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 && weaponSwapTimer <= 0) {
@@ -45,8 +50,10 @@ public class WeaponManager : MonoBehaviour {
             prevWeapon = currentWeapon;
             DestroyPrevious(prevWeapon);
             currentWeapon = 2;
-            PlayerUzi pu = gameObject.AddComponent<PlayerUzi>();
-            pu.bulletPrefab = Inventory.instance.bullets[2];
+            IGunInterface gun = gameObject.AddComponent<PlayerUzi>();
+            gun.LoadBullets(2);
+            //PlayerUzi pu = gameObject.AddComponent<PlayerUzi>();
+            //pu.bulletPrefab = Inventory.instance.bullets[2];
         }
 
     }

@@ -12,15 +12,16 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
 
     private void Start() {
         bulletLayer = 11; //player bullet layer
+        Inventory.instance.Add(this);
+        LoadBullets(0);
     }
 
     void Update() {
+        cooldownTimer -= Time.deltaTime;
         Fire();
     }
     public void Fire() {
-            cooldownTimer -= Time.deltaTime;
-
-
+        
             if (Input.GetButton("Fire1") && cooldownTimer <= 0) {
                 //Fire weapon
                 cooldownTimer = fireDelay;
@@ -30,6 +31,9 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
                 GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
                 bulletGO.layer = bulletLayer;
             }
+    }
+    public void LoadBullets(int index) {
+        bulletPrefab = Inventory.instance.bullets[index];
     }
 
 }

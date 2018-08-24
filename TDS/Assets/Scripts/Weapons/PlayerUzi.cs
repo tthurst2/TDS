@@ -16,12 +16,11 @@ public class PlayerUzi : MonoBehaviour, IGunInterface {
     }
 
     void Update() {
+        cooldownTimer -= Time.deltaTime;
         Fire();
     }
     #region IsGunInterface implementation 
     public void Fire() {
-        cooldownTimer -= Time.deltaTime;
-
 
         if (Input.GetButton("Fire1") && cooldownTimer <= 0) {
             //Fire weapon
@@ -38,6 +37,9 @@ public class PlayerUzi : MonoBehaviour, IGunInterface {
             bulletGO.layer = bulletLayer;
             bulletGO2.layer = bulletLayer;
         }
+    }
+    public void LoadBullets(int index) {
+        bulletPrefab = Inventory.instance.bullets[index];
     }
     #endregion
 
