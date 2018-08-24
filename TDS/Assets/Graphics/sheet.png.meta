@@ -8,6 +8,7 @@ TextureImporter:
     21300006: Red Beam
     21300008: EnemyShip - Purple Elite
     21300010: Green Uzi
+    21300012: StarBomb
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -198,13 +199,33 @@ TextureImporter:
         width: 9
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: fc69023df81332c478989c9829ea2eb8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StarBomb
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 200
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094144bd13e7c774582f0267617cdd99
       vertices: []
       indices: 
       edges: []

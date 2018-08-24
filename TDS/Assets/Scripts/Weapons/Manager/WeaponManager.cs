@@ -56,6 +56,15 @@ public class WeaponManager : MonoBehaviour {
             //pu.bulletPrefab = Inventory.instance.bullets[2];
         }
 
+        if (Input.GetKey(KeyCode.Alpha4) && currentWeapon != 3 && weaponSwapTimer <= 0) {
+            weaponSwapTimer = 0.5f; ;
+            prevWeapon = currentWeapon;
+            DestroyPrevious(prevWeapon);
+            currentWeapon = 3;
+            IGunInterface gun = gameObject.AddComponent<PlayerClusterBomb>();
+            gun.LoadBullets(3);
+        }
+
     }
 
     public void DestroyPrevious(int index) {
@@ -71,6 +80,10 @@ public class WeaponManager : MonoBehaviour {
             case 2:
                 PlayerUzi pu = GetComponent<PlayerUzi>();
                 Destroy(pu);
+                break;
+            case 3:
+                PlayerClusterBomb cb = GetComponent<PlayerClusterBomb>();
+                Destroy(cb);
                 break;
             default:
                 Debug.Log("Error with weapon destruction");

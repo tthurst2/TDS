@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
+public class PlayerClusterBomb : MonoBehaviour, IGunInterface {
 
     public GameObject bulletPrefab;
     public Vector3 bulletOffset = new Vector3(0, 0.5f, 0);
@@ -13,15 +13,16 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
     private void Start() {
         bulletLayer = 11; //player bullet layer
         Inventory.instance.Add(this);
-        LoadBullets(0);
+        LoadBullets(3);
     }
 
     void Update() {
         cooldownTimer -= Time.deltaTime;
         Fire();
     }
+
     public void Fire() {
-        
+
         if (Input.GetButton("Fire1") && cooldownTimer <= 0) {
             //Fire weapon
             cooldownTimer = fireDelay;
@@ -30,6 +31,7 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
 
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
             bulletGO.layer = bulletLayer;
+
         }
     }
     public void LoadBullets(int index) {
