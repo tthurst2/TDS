@@ -27,7 +27,7 @@ public class WeaponManager : MonoBehaviour {
             DestroyPrevious(prevWeapon);
             currentWeapon = 0;
             PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
-            //bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");  //old legacy shit
+            //bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");
             bb.bulletPrefab = Inventory.instance.weapons[0];
         }
 
@@ -46,7 +46,7 @@ public class WeaponManager : MonoBehaviour {
             DestroyPrevious(prevWeapon);
             currentWeapon = 2;
             PlayerUzi pu = gameObject.AddComponent<PlayerUzi>();
-            pu.bulletPrefab = Inventory.instance.weapons[2];
+            pu.bulletPrefab = Inventory.instance.weapons[Random.Range(0,3)];
         }
 
     }
