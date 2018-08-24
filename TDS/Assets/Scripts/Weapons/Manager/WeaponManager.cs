@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
-        bb.bulletPrefab = Inventory.instance.weapons[0];
+        bb.bulletPrefab = Inventory.instance.bullets[0];
         currentWeapon = 0;
         prevWeapon = 0;
     }
@@ -28,7 +28,7 @@ public class WeaponManager : MonoBehaviour {
             currentWeapon = 0;
             PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
             //bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");
-            bb.bulletPrefab = Inventory.instance.weapons[0];
+            bb.bulletPrefab = Inventory.instance.bullets[0];
         }
 
         if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 && weaponSwapTimer <= 0) {
@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour {
             DestroyPrevious(prevWeapon);
             currentWeapon = 1;
             PlayerShotgun ps = gameObject.AddComponent<PlayerShotgun>();
-            ps.bulletPrefab = Inventory.instance.weapons[1];
+            ps.bulletPrefab = Inventory.instance.bullets[1];
         }
 
         if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 && weaponSwapTimer <= 0) {
@@ -46,7 +46,7 @@ public class WeaponManager : MonoBehaviour {
             DestroyPrevious(prevWeapon);
             currentWeapon = 2;
             PlayerUzi pu = gameObject.AddComponent<PlayerUzi>();
-            pu.bulletPrefab = Inventory.instance.weapons[Random.Range(0,3)];
+            pu.bulletPrefab = Inventory.instance.bullets[2];
         }
 
     }
