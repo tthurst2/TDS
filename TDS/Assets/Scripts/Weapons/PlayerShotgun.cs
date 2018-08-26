@@ -43,6 +43,12 @@ public class PlayerShotgun : MonoBehaviour, IGunInterface {
         bulletPrefab = Inventory.instance.bullets[index];
     }
     #endregion
+    public void EquipGun() {
 
+    }
+
+    public void RemoveGun() {
+
+    }
 
 }

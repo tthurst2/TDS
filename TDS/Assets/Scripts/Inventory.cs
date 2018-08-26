@@ -19,15 +19,23 @@ public class Inventory : MonoBehaviour {
     }
     #endregion
     //Weapon list
+    public List<GameObject> weaponList = new List<GameObject>();
     public List<IGunInterface> weapons = new List<IGunInterface>();
     public List<GameObject> bullets = new List<GameObject>();
-    
+
+    void Start() {
+    }
+
     public void Add (IGunInterface weapon) {
         weapons.Add(weapon);
     }
 
     public void Remove(IGunInterface weapon) {
         weapons.Remove(weapon);
+    }
+
+    public void FireWeapon(IGunInterface weapon) {
+        weapon.Fire();
     }
 
 }

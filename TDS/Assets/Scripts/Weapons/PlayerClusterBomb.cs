@@ -37,5 +37,12 @@ public class PlayerClusterBomb : MonoBehaviour, IGunInterface {
     public void LoadBullets(int index) {
         bulletPrefab = Inventory.instance.bullets[index];
     }
+    public void EquipGun() {
+
+    }
+
+    public void RemoveGun() {
+
+    }
 
 }

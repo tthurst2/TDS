@@ -41,6 +41,13 @@ public class PlayerUzi : MonoBehaviour, IGunInterface {
     public void LoadBullets(int index) {
         bulletPrefab = Inventory.instance.bullets[index];
     }
+    public void EquipGun() {
+
+    }
+
+    public void RemoveGun() {
+
+    }
     #endregion
 
 

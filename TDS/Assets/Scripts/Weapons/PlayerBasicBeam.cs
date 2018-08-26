@@ -18,7 +18,7 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
 
     void Update() {
         cooldownTimer -= Time.deltaTime;
-        Fire();
+        //Fire();
     }
     public void Fire() {
         
@@ -34,6 +34,14 @@ public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
     }
     public void LoadBullets(int index) {
         bulletPrefab = Inventory.instance.bullets[index];
+    }
+    public void EquipGun() {
+        Debug.Log("equipping PlayerBasicLaser");
+        transform.parent.gameObject.AddComponent<PlayerBasicBeam>();
+    }
+
+    public void RemoveGun() {
+
     }
 
 }

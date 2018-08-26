@@ -1067,12 +1067,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769bc93bd21d33a4ca3caf7fb73be12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 1751183493294048, guid: 5a30737bd14ede6468d98ebe4903d82a, type: 2}
+  - {fileID: 1720445235790402, guid: ef4d092c309baf649826cb1a5c167326, type: 2}
+  - {fileID: 1961863859077214, guid: 1c6d03ad4beecba4d981731406c6bdc6, type: 2}
+  - {fileID: 1630376800341920, guid: bb6c89ce2ec854a479a3133e0803316e, type: 2}
   bullets:
   - {fileID: 1298945301817288, guid: 3a252b0bd391c5b45a8b37dacde4968f, type: 2}
   - {fileID: 1103394869995212, guid: 070f54041820330439ae0ad18e87bbfd, type: 2}
   - {fileID: 1013142547183870, guid: ae8baf4fce4958f45b0087b0fc770fae, type: 2}
   - {fileID: 1218407773202772, guid: 05e2bed3e59cb334a81e85beb20655ab, type: 2}
-  - {fileID: 0}
 --- !u!4 &1047606177
 Transform:
   m_ObjectHideFlags: 0
