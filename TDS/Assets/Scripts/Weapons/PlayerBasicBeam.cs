@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBasicBeam : MonoBehaviour, IGunInterface {
+public class PlayerBasicBeam : Weapon, IGunInterface {
 
     public GameObject bulletPrefab;
     public Vector3 bulletOffset = new Vector3(0, 0.5f, 0);
