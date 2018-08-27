@@ -18,8 +18,9 @@ public class PlayerBasicBeam : Weapon, IGunInterface {
 
     void Update() {
         cooldownTimer -= Time.deltaTime;
-        //Fire();
+        Fire();
     }
+
     public void Fire() {
         
         if (Input.GetButton("Fire1") && cooldownTimer <= 0) {
@@ -36,8 +37,7 @@ public class PlayerBasicBeam : Weapon, IGunInterface {
         bulletPrefab = Inventory.instance.bullets[index];
     }
     public void EquipGun() {
-        Debug.Log("equipping PlayerBasicLaser");
-        transform.parent.gameObject.AddComponent<PlayerBasicBeam>();
+
     }
 
     public void RemoveGun() {

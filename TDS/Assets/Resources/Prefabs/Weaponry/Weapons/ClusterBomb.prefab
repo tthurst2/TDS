@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4308930214238684}
   - component: {fileID: 114238352871100760}
-  - component: {fileID: 114874728643582716}
   m_Layer: 0
   m_Name: ClusterBomb
   m_TagString: Untagged
@@ -56,15 +55,3 @@ MonoBehaviour:
     type: 2}
   bulletOffset: {x: 0, y: 0.5, z: 0}
   fireDelay: 0.25
---- !u!114 &114874728643582716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630376800341920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3983d01e43b2e954898ac60314498857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zAngle: 720

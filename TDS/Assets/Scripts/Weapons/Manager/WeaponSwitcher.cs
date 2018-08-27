@@ -42,7 +42,4 @@ public class WeaponSwitcher : MonoBehaviour {
         equippedWeapon = inv.weaponList[i];
         index = inv.weaponList.IndexOf(equippedWeapon);
     }
-    void equipWeapon(string s) {
-        
-    }
 }

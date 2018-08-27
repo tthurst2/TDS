@@ -31,7 +31,6 @@ public class PlayerClusterBomb : Weapon, IGunInterface {
 
             GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, transform.position + offset, transform.rotation);
             bulletGO.layer = bulletLayer;
-
         }
     }
     public void LoadBullets(int index) {

@@ -3,93 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour {
-    int prevWeapon = -1;
-    int currentWeapon = -1;
-    float weaponSwapTimer = 0.5f;
-	// Use this for initialization
-	void Start () {
-        IGunInterface gun = gameObject.AddComponent<PlayerBasicBeam>();
-        gun.LoadBullets(1);
-        //bb.GetComponent<PlayerBasicBeam>().bulletPrefab = Inventory.instance.weapons[0];
-        currentWeapon = 0;
-        prevWeapon = 0;
+
+    Inventory inv = Inventory.instance;
+    float weaponSwapTimer = 0f;
+    int weaponIndex;
+    void Start() {
+        LoadWeapons();
+        EquipWeapon(0);
+        //transform.GetChild(0).gameObject.SetActive(true); 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        /*
-         * THIS IS REALLY BAD, DO NOT ACTUALLY USE THIS. PURELY FOR UNDERSTANDING HOW UNITY WORKS
-         */
+
+    void Update() {
         weaponSwapTimer -= Time.deltaTime;
-        
-        if (Input.GetKey(KeyCode.Alpha1) && currentWeapon != 0 && weaponSwapTimer <= 0) {
-            weaponSwapTimer = 0.5f;
-            prevWeapon = currentWeapon;
-            DestroyPrevious(prevWeapon);
-            currentWeapon = 0;
-            //PlayerBasicBeam bb = gameObject.AddComponent<PlayerBasicBeam>();
-            IGunInterface gun = gameObject.AddComponent<PlayerBasicBeam>();
-            gun.LoadBullets(0);
-            //bb.bulletPrefab = Resources.Load<GameObject>("Prefabs/Weapons/Blue Beam");
-            //bb.bulletPrefab = Inventory.instance.bullets[0];
+        if (Input.GetKeyDown(KeyCode.Alpha1) && weaponIndex != 0 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 1) {
+            EquipWeapon(0);
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && currentWeapon != 1 && weaponSwapTimer <= 0) {
-            weaponSwapTimer = 0.5f; ;
-            prevWeapon = currentWeapon;
-            DestroyPrevious(prevWeapon);
-            currentWeapon = 1;
-            IGunInterface gun = gameObject.AddComponent<PlayerShotgun>();
-            gun.LoadBullets(1);
-            //PlayerShotgun ps = gameObject.AddComponent<PlayerShotgun>();
-            //ps.bulletPrefab = Inventory.instance.bullets[1];
+        if (Input.GetKeyDown(KeyCode.Alpha2) && weaponIndex != 1 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 2) {
+            EquipWeapon(1);
         }
 
-        if (Input.GetKey(KeyCode.Alpha3) && currentWeapon != 2 && weaponSwapTimer <= 0) {
-            weaponSwapTimer = 0.5f; ;
-            prevWeapon = currentWeapon;
-            DestroyPrevious(prevWeapon);
-            currentWeapon = 2;
-            IGunInterface gun = gameObject.AddComponent<PlayerUzi>();
-            gun.LoadBullets(2);
-            //PlayerUzi pu = gameObject.AddComponent<PlayerUzi>();
-            //pu.bulletPrefab = Inventory.instance.bullets[2];
+        if (Input.GetKeyDown(KeyCode.Alpha3) && weaponIndex != 2 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 3) {
+            EquipWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4) && weaponIndex != 3 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 4) {
+            EquipWeapon(3);
         }
 
-        if (Input.GetKey(KeyCode.Alpha4) && currentWeapon != 3 && weaponSwapTimer <= 0) {
-            weaponSwapTimer = 0.5f; ;
-            prevWeapon = currentWeapon;
-            DestroyPrevious(prevWeapon);
-            currentWeapon = 3;
-            IGunInterface gun = gameObject.AddComponent<PlayerClusterBomb>();
-            gun.LoadBullets(3);
+        if (Input.GetKeyDown(KeyCode.Alpha5) && weaponIndex != 4 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 5) {
+            EquipWeapon(4);
         }
-
     }
 
-    public void DestroyPrevious(int index) {
-        switch (index) {
-            case 0:
-                PlayerBasicBeam bb = GetComponent<PlayerBasicBeam>();
-                Destroy(bb);
-                break;
-            case 1:
-                PlayerShotgun ps = GetComponent<PlayerShotgun>();
-                Destroy(ps);
-                break;
-            case 2:
-                PlayerUzi pu = GetComponent<PlayerUzi>();
-                Destroy(pu);
-                break;
-            case 3:
-                PlayerClusterBomb cb = GetComponent<PlayerClusterBomb>();
-                Destroy(cb);
-                break;
-            default:
-                Debug.Log("Error with weapon destruction");
-                break;
+    public void LoadWeapons() {
+        for(int i = 0; i < inv.weaponList.Count; i++) {
+            GameObject go = Instantiate(inv.weaponList[i]);
+            go.transform.parent = transform;
+            go.SetActive(false);
         }
+    }
 
-    }    
+    public void EquipWeapon(int index) {
+        /*    for(int i = 0; i < Inventory.instance.weaponList.Count; i++) {
+                if (i == index) {
+                    transform.GetChild(i).gameObject.SetActive(true);
+                }
+                else
+                    transform.GetChild(i).gameObject.SetActive(false);
 
+            }
+        }
+        */
+        weaponIndex = index;
+        int i = 0;
+        foreach (Transform weapon in transform) {
+            if (i == index)
+                weapon.gameObject.SetActive(true);
+            else 
+                weapon.gameObject.SetActive(false);
+                i++;            
+        }
+    }
 }

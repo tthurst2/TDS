@@ -6,7 +6,7 @@ public class BombExplosion : MonoBehaviour {
 
     //number of bullets we want in explosive nova
     public float novaBullets = 45f;
-    public bool isQuitting = false;
+    private bool isQuitting = false;
     private void OnApplicationQuit() {
         isQuitting = true;
     }
