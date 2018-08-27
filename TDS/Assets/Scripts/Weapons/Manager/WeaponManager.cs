@@ -33,6 +33,10 @@ public class WeaponManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha5) && weaponIndex != 4 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 5) {
             EquipWeapon(4);
         }
+
+        if (Input.GetAxis("Mouse ScrollWheel") != 0) {
+            EquipWeapon(weaponIndex + (int)Input.GetAxis("Mouse ScrollWheel"));
+        }
     }
 
     public void LoadWeapons() {

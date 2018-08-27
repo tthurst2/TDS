@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemyPrefab;
-
-    float spawnDistance = 10f;
+    private readonly float spawnDistance = 10f;
 
     float enemyRate = 4;
     float nextEnemy = 1;

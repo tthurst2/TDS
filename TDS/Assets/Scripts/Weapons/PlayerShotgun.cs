@@ -9,7 +9,7 @@ public class PlayerShotgun : Weapon, IGunInterface {
     public float fireDelay = 0.50f;
     float cooldownTimer = 0;
     int bulletLayer;
-    float tiltAngle = 15.0f;
+    readonly float tiltAngle = 15.0f;
     private void Start() {
         bulletLayer = 11; //player bullet layer 
     }

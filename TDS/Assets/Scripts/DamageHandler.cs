@@ -10,7 +10,7 @@ public class DamageHandler : MonoBehaviour {
     int correctLayer;
     float collisionTimer = 0;
     float invulnAnimTimer = 0;
-    private float invulnFlashDelay = 0.2f; //5 flashes per second
+    private readonly float invulnFlashDelay = 0.2f; //5 flashes per second
     SpriteRenderer spriteRend;
 
     void Start() {
