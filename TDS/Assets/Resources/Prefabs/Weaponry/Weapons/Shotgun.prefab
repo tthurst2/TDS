@@ -54,4 +54,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1103394869995212, guid: 070f54041820330439ae0ad18e87bbfd,
     type: 2}
   bulletOffset: {x: 0, y: 0.5, z: 0}
-  fireDelay: 0.5
+  fireDelay: 0.33

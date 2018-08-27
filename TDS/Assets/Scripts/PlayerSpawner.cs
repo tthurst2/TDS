@@ -23,7 +23,7 @@ public class PlayerSpawner : MonoBehaviour {
         GameObject.Find("LivesPanel").GetComponent<Text>().text = "Lives: " + numLives;
         respawnTimer = 1;
         if(numLives > 0) {  //don't spawn a ship when the game ends
-            playerInstance = (GameObject)Instantiate(playerPrefab, transform.position, Quaternion.identity);
+            playerInstance = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         }
     }
 
