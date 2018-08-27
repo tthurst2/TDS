@@ -6,7 +6,7 @@ public class WeaponManager : MonoBehaviour {
 
     Inventory inv = Inventory.instance;
     float weaponSwapTimer = 0f;
-    int weaponIndex;
+    public int weaponIndex;
     void Start() {
         LoadWeapons();
         EquipWeapon(0);
@@ -15,6 +15,24 @@ public class WeaponManager : MonoBehaviour {
 
     void Update() {
         weaponSwapTimer -= Time.deltaTime;
+
+        //scroll wheel through entire weapon list
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) {
+            if (weaponIndex >= transform.childCount - 1)
+                EquipWeapon(0);
+            else
+                EquipWeapon(weaponIndex + 1);
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
+            if (weaponIndex <= 0)
+                EquipWeapon(transform.childCount - 1);
+            else
+                EquipWeapon(weaponIndex - 1);
+        }
+
+
+        //number keys for first five elements
         if (Input.GetKeyDown(KeyCode.Alpha1) && weaponIndex != 0 && weaponSwapTimer <= 0 && inv.weaponList.Count >= 1) {
             EquipWeapon(0);
         }
@@ -34,9 +52,7 @@ public class WeaponManager : MonoBehaviour {
             EquipWeapon(4);
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") != 0) {
-            EquipWeapon(weaponIndex + (int)Input.GetAxis("Mouse ScrollWheel"));
-        }
+        
     }
 
     public void LoadWeapons() {
@@ -47,17 +63,7 @@ public class WeaponManager : MonoBehaviour {
         }
     }
 
-    public void EquipWeapon(int index) {
-        /*    for(int i = 0; i < Inventory.instance.weaponList.Count; i++) {
-                if (i == index) {
-                    transform.GetChild(i).gameObject.SetActive(true);
-                }
-                else
-                    transform.GetChild(i).gameObject.SetActive(false);
-
-            }
-        }
-        */
+    public void EquipWeapon(int index) {        
         weaponIndex = index;
         int i = 0;
         foreach (Transform weapon in transform) {
