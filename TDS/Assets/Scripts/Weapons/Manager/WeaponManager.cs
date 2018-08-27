@@ -63,7 +63,8 @@ public class WeaponManager : MonoBehaviour {
         }
     }
 
-    public void EquipWeapon(int index) {        
+    public void EquipWeapon(int index) {
+        Debug.Log(transform.parent.name);
         weaponIndex = index;
         int i = 0;
         foreach (Transform weapon in transform) {
