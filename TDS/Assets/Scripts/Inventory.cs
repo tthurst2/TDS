@@ -20,18 +20,16 @@ public class Inventory : MonoBehaviour {
     #endregion
     //Weapon list
     public List<GameObject> weaponList = new List<GameObject>();
-    public List<Weapon> weapons = new List<Weapon>();
+    public List<GameObject> subWeaponList = new List<GameObject>();
     public List<GameObject> bullets = new List<GameObject>();
 
     void Start() {
     }
 
     public void Add (Weapon weapon) {
-        weapons.Add(weapon);
     }
 
     public void Remove(Weapon weapon) {
-        weapons.Remove(weapon);
     }
 
 }

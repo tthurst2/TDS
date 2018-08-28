@@ -12,7 +12,6 @@ public class PlayerClusterBomb : Weapon, IGunInterface {
 
     private void Start() {
         bulletLayer = 11; //player bullet layer
-        Inventory.instance.Add(this);
         LoadBullets(3);
     }
 
