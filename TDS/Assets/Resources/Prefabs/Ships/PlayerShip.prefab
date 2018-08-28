@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 222749669640614506}
   - component: {fileID: 114885940114092274}
   - component: {fileID: 114384756823512268}
-  - component: {fileID: 114541799983751268}
+  - component: {fileID: 114007070133958134}
   m_Layer: 5
   m_Name: WeaponPane
   m_TagString: Untagged
@@ -379,7 +379,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983254093526364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8780117, y: -1.0099444, z: 0}
+  m_LocalPosition: {x: -4.5448446, y: 0.0728879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4680140154819536}
@@ -428,6 +428,17 @@ PolygonCollider2D:
       - {x: 0.40170377, y: -0.05144596}
       - {x: 0.4466999, y: -0.09302686}
       - {x: 0.47168067, y: 0.18872294}
+--- !u!114 &114007070133958134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024380842657236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb48387d4161f8d4fba9fb4ffb341e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114204459358322518
 MonoBehaviour:
   m_ObjectHideFlags: 1
