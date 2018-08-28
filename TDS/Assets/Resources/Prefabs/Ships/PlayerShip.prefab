@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222749669640614506}
   - component: {fileID: 114885940114092274}
   - component: {fileID: 114384756823512268}
+  - component: {fileID: 114571974607772682}
   m_Layer: 5
   m_Name: WeaponPane
   m_TagString: Untagged
@@ -378,7 +379,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983254093526364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 353.26807, y: 129.94324, z: 0}
+  m_LocalPosition: {x: -4.4572597, y: -0.61520195, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4680140154819536}
@@ -811,6 +812,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114571974607772682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024380842657236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c315174b7c5be4fbfb62c18da3fdf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114646395921109198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1793,8 +1805,8 @@ RectTransform:
   m_Father: {fileID: 224705231730080174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 100}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 0}
