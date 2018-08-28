@@ -497,7 +497,7 @@ MonoBehaviour:
   - {fileID: 1751183493294048, guid: 5a30737bd14ede6468d98ebe4903d82a, type: 2}
   - {fileID: 1720445235790402, guid: ef4d092c309baf649826cb1a5c167326, type: 2}
   - {fileID: 1961863859077214, guid: 1c6d03ad4beecba4d981731406c6bdc6, type: 2}
-  - {fileID: 1630376800341920, guid: bb6c89ce2ec854a479a3133e0803316e, type: 2}
+  - {fileID: 1218407773202772, guid: 05e2bed3e59cb334a81e85beb20655ab, type: 2}
   subWeaponList: []
   bullets:
   - {fileID: 1298945301817288, guid: 3a252b0bd391c5b45a8b37dacde4968f, type: 2}
