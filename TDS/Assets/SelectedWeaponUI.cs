@@ -9,7 +9,7 @@ public class SelectedWeaponUI : MonoBehaviour {
 
     public void UpdateSelectedUI(int index) {
         for (int i = 0; i < transform.childCount; i++) {
-            Debug.Log(transform.GetChild(i).name);
+            //Debug.Log(transform.GetChild(i).name);
             if (i == index)
                 transform.GetChild(i).GetComponent<Image>().color = new Color(39/255f, 60/255f, 255/255f, 255f/255);
             else

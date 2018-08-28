@@ -10,7 +10,6 @@ public class WeaponManager : MonoBehaviour {
     void Start() {
         LoadWeapons();
         EquipWeapon(0);
-        //transform.GetChild(0).gameObject.SetActive(true); 
     }
 
     void Update() {
@@ -65,7 +64,6 @@ public class WeaponManager : MonoBehaviour {
 
 
     public void EquipWeapon(int index) {
-        //Debug.Log("Equip Weapon: " + transform.childCount);
         weaponIndex = index;
         int i = 0;
         foreach (Transform weapon in transform) {
