@@ -64,7 +64,7 @@ public class WeaponManager : MonoBehaviour {
     }
 
     public void EquipWeapon(int index) {
-        Debug.Log(transform.parent.name);
+        //Debug.Log("Equip Weapon: " + transform.childCount);
         weaponIndex = index;
         int i = 0;
         foreach (Transform weapon in transform) {
